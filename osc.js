@@ -115,7 +115,14 @@ function initialize() {
         }
         const keyDom = document.createElement('div');
         keyDom.setAttribute('class', className)
-        keyDom.setAttribute('id', `key-${letter}`)
+        keyDom.setAttribute('id', `key-${letter}`);
+        keyDom.onmousedown = () => {
+            play(keyToFrequencyMap[letter], letter)
+        }
+        keyDom.onmouseup = () => {
+            stop(letter)
+        }
+
         keyDom.innerText = letter
         pianoDom.appendChild(keyDom)
     })
