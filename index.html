@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style type="text/css">
+        .midi-keyboard {
+            display: flex;
+            flex-direction: row;
+
+            margin-top: 20px;
+        }
+
+        .midi-keyboard .piano-key {
+            padding: 20px 10px 0 10px;
+            margin: 0 1px;
+            border: 1px solid gray;
+            border-top: none;
+        }
+
+        .midi-keyboard .piano-key.black {
+            background-color: black;
+            color: white;
+            padding: 20px 5px 0 5px;
+            transform: scaleY(.8);
+            transform-origin: top;
+        }
+
+        .midi-keyboard .piano-key.pressed {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body onload="initialize()">
+    <p>wave type:</p>
+    <form>
+        <label>
+            <input name="wavetype" type="radio" value="sine" onchange="changeFrequencyType(this)" checked />
+            sine
+        </label>
+        <label>
+            <input name="wavetype" type="radio" value="square" onchange="changeFrequencyType(this)" />
+            square
+        </label>
+        <label>
+            <input name="wavetype" type="radio" value="triangle" onchange="changeFrequencyType(this)" />
+            triangle
+        </label>
+        <label>
+            <input name="wavetype" type="radio" value="sawtooth" onchange="changeFrequencyType(this)" />
+            sawtooth
+        </label>
+    </form>
+
+    <div id="midi-keyboard" class="midi-keyboard"></div>
+    <script src="osc.js" type="text/javascript"></script>
+</body>
+
+</html>
