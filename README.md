@@ -7,11 +7,15 @@ All pure JS, CSS & HTML
 ## Run
 
 Well, Open `index.html` in a modern browser (by modern I mean [this table](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode#Browser_compatibility))
+and start pressing the keys printed on screen
+
+> // or just go to [https://ardeshir81.github.io/oscillators-play-ground/](https://ardeshir81.github.io/oscillators-play-ground/)
 
 ## Fun
 
 Note the difference of default wavetypes (`sine`, `square`, `triangle` & `sawtooth`) on FireFox & Chrome :)
-My chrome play it a little distorted
+
+My chrome plays it a little distorted
 
 ## Develop
 
