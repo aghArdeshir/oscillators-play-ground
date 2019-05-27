@@ -102,6 +102,14 @@ function changeFrequencyType(e) {
     oscillatorType = e.value;
 }
 
+function orderPlay(letter) {
+    play(keyToFrequencyMap[letter], letter)
+}
+
+function orderStop(letter) {
+    stop(letter)
+}
+
 function initialize() {
     // set default frequency type
     document.querySelector('input[value=sine]').checked = true;
@@ -116,11 +124,12 @@ function initialize() {
         const keyDom = document.createElement('div');
         keyDom.setAttribute('class', className)
         keyDom.setAttribute('id', `key-${letter}`);
-        keyDom.onmousedown = () => {
-            play(keyToFrequencyMap[letter], letter)
+        keyDom.onmousedown = keyDom.ontouchstart = () => {
+            orderPlay(letter)
         }
-        keyDom.onmouseup = () => {
-            stop(letter)
+
+        keyDom.onmouseup = keyDom.ontouchend = () => {
+            orderStop(letter)
         }
 
         keyDom.innerText = letter
@@ -136,7 +145,7 @@ document.addEventListener('keydown', e => {
     const letter = getEventKeyLetter(e);
     if (!letter) return;
 
-    play(keyToFrequencyMap[letter], letter)
+    orderPlay(letter)
 
     let className = 'piano-key pressed '
     if (blackKeys.indexOf(letter) > -1) { className += 'black' }
@@ -147,7 +156,7 @@ document.addEventListener('keyup', e => {
     const letter = getEventKeyLetter(e);
     if (!letter) return;
 
-    stop(letter)
+    orderStop(letter)
 
     let className = 'piano-key '
     if (blackKeys.indexOf(letter) > -1) { className += 'black' }
