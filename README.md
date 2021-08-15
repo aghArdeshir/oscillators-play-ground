@@ -9,7 +9,7 @@ All pure JS, CSS & HTML
 Well, Open `index.html` in a modern browser (by modern I mean [this table](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode#Browser_compatibility))
 and start pressing the keys printed on screen
 
-> // or just go to [https://ardeshir81.github.io/oscillators-play-ground/](https://ardeshir81.github.io/oscillators-play-ground/)
+> // or just go to [https://aghardeshir.github.io/oscillators-play-ground/](https://aghardeshir.github.io/oscillators-play-ground/)
 
 ## Fun
 
